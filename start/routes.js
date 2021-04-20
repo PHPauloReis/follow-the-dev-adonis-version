@@ -21,4 +21,8 @@ Route.get('/create', 'DevController.create').as('dev.create')
 Route.post('/store', 'DevController.store').as('dev.store').validator('StoreDev')
 Route.delete('/delete/:id', 'DevController.delete').as('dev.delete')
 
+Route.get('/about', ({ view }) => {
+  return view.render('others.about')
+}).as('others.about')
+
 Route.on('/').render('welcome')

@@ -1,0 +1,78 @@
+@layout('layout.template')
+@section('main')
+
+<div class="wrapper">
+
+  <header>
+      <div class="brand">Follow<span>The</span>Dev</div>
+      <a href="{{  route('dev.index') }}" class="btn btn_red btn_back">
+          Listagem de Devs
+      </a>
+  </header>
+
+  <main>
+
+    <section class="card_container">
+
+      <div class="page bio_container">
+
+        <h1>Sobre o Autor</h1>
+
+          <div class="bio">
+
+            <p>Esse projeto foi criado com todo carinho por mim (Paulo Reis dos Santos). Espero verdadeiramente que ele seja útil de alguma forma para você, seja para uso no dia-a-dia ou para estudo.</p>
+
+            <p>Segue abaixo algumas das tecnologias que foram utilizadas nesse projeto</p>
+
+            <ul class="technology_list">
+                <li>HTML 5</li>
+                <li>CSS 3</li>
+                <li>Javascript</li>
+            </ul>
+
+            <h2>Quer conhecer mais sobre meus projetos?:</h2>
+
+            <div class="table_responsive">
+              <table>
+                <tr>
+                  <th>Canal</th>
+                  <th>Descrição</th>
+                </tr>
+                <tr>
+                  <td><a href="https://www.linkedin.com/in/paulo-reis-97160b186/">Likedin</a></td>
+                  <td>Quer conhecer um pouco mais do meu lado profissional e ter acesso ao meu currículo? Então me siga no Linkedin!</td>
+                </tr>
+                <tr>
+                  <td><a href="https://github.com/PHPauloReis">Github</a></td>
+                  <td>Em meu Github pessoal você pode acompanhar um pouco das tecnologias que eu ando estudando!</td>
+                </tr>
+                <tr>
+                  <td><a href="https://www.instagram.com/acampamentodev/">Acampamento Dev</a></td>
+                  <td>Perfil do Instagram que criei para compartilhar um pouco de conhecimento com o mundo!</td>
+                </tr>
+                <tr>
+                  <td><a href="https://www.facebook.com/BugginhoDeveloper">Bugginho Developer</a></td>
+                  <td>Quer rir um pouco? Na página Bugginho Developer você terá acesso a um humor 100% voltado a área de TI! Não aconselhável para os fracos!</td>
+                </tr>
+              </table>
+            </div>
+
+            <p class="credits">
+              UNIME - União Metropolitana de Educação e Cultura<br>
+              Disciplina: Programação Web<br>
+              Período letivo: 2021.1<br>
+              Professor: Pablo Ricardo Roxo Silva<br>
+              Aluno: Paulo Reis dos Santos
+            </p>
+
+          </div>
+
+        </div>
+
+    </section>
+
+  </main>
+
+</div>
+
+@endsection
