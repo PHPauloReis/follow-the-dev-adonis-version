@@ -4,7 +4,7 @@ const Dev = use("App/Models/Dev")
 
 class DevController {
 
-  async index({ request, response, view }) {
+  async index({ view, session }) {
 
     const devs = await Dev.all()
 
@@ -13,8 +13,22 @@ class DevController {
     })
   }
 
-  create({ request, response, view }) {
+  create({ view, session }) {
     return view.render('dev.create')
+  }
+
+  async store({ request, response, session }) {
+
+    await Dev.create(request.only([
+      'name', 'subject', 'avatar', 'github', 'youtube', 'linkedin', 'twitter', 'instagram', 'site_blog'
+    ]))
+
+    session.flash({
+      success: 'Registro gravado com sucesso!'
+    })
+
+    response.redirect('back')
+
   }
 
 }

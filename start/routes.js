@@ -18,5 +18,6 @@ const Route = use('Route')
 
 Route.get('/', 'DevController.index').as('dev.index')
 Route.get('/create', 'DevController.create').as('dev.create')
+Route.post('/store', 'DevController.store').as('dev.store').validator('StoreDev')
 
 Route.on('/').render('welcome')

@@ -1,0 +1,15 @@
+@if(flashMessage('success'))
+<div class="alert_success">
+  <strong>Aviso!</strong><br>
+  {{ flashMessage('success') }}
+</div>
+@endif
+
+@if(flashMessages.errors)
+<div class="alert_danger">
+  <strong>Aviso!</strong><br>
+  @each(error in flashMessages.errors)
+    {{ error.message }}<br>
+  @endeach
+</div>
+@endif

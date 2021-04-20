@@ -5,12 +5,14 @@
 
   <header>
       <div class="brand">Follow<span>The</span>Dev</div>
-      <a href="index.html" class="btn btn_red btn_back">
+      <a href="{{  route('dev.index') }}" class="btn btn_red btn_back">
           Listagem de Devs
       </a>
   </header>
 
   <main>
+
+      @include('layout.alerts')
 
       <section class="card_container">
 
@@ -18,99 +20,112 @@
 
               <h1>Cadastrar novo Dev</h1>
 
-              <form action="">
+              <form action="{{ route('dev.store') }}" method="POST">
 
-                  <div class="row">
+                {{ csrfField() }}
 
-                      <div class="col_100">
-                          <div class="form_group">
-                              <label for="name">Nome do Dev</label>
-                              <input type="text" name="name" id="name" placeholder="Ex.: Acampamento Dev">
-                          </div>
-                      </div>
+                <div class="row">
 
+                  <div class="col_100">
+                    <div class="form_group">
+                      <label for="name">Nome do Dev <span class="required">*</span></label>
+                      <input type="text" name="name" id="name" placeholder="Ex.: Acampamento Dev" value="{{ old('name') }}">
+                    </div>
                   </div>
 
-                  <div class="row">
+                </div>
 
-                      <div class="col_100">
-                          <div class="form_group">
-                              <label for="name">Assuntos abordados pelo Dev</label>
-                              <input type="text" name="name" id="name" placeholder="Ex.: PHP, Javascript, Java, Design Patterns, Clean Code, etc...">
-                          </div>
-                      </div>
+                <div class="row">
 
+                  <div class="col_100">
+                    <div class="form_group">
+                      <label for="subject">Assuntos abordados pelo Dev <span class="required">*</span></label>
+                      <input type="text" name="subject" id="subject" placeholder="Ex.: PHP, Javascript, Java, Design Patterns, Clean Code, etc..." value="{{ old('subject') }}">
+                    </div>
                   </div>
 
-                  <div class="row">
+                </div>
 
-                      <div class="col_50">
-                          <div class="form_group">
-                              <label for="github">Github</label>
-                              <input type="text" name="github" id="name" placeholder="Url para o Github do Dev">
-                          </div>
-                      </div>
+                <div class="row">
 
-                      <div class="col_50">
-                          <div class="form_group">
-                              <label for="youtube">Youtube</label>
-                              <input type="text" name="youtube" id="youtube" placeholder="Url para o Youtube do Dev">
-                          </div>
-                      </div>
-
+                  <div class="col_100">
+                    <div class="form_group">
+                      <label for="avatar">Avatar <span class="required">*</span></label>
+                      <input type="text" name="avatar" id="avatar" placeholder="Url para o Avatar do Dev" value="{{ old('avatar') }}">
+                    </div>
                   </div>
 
-                  <div class="row">
+                </div>
 
-                      <div class="col_50">
-                          <div class="form_group">
-                              <label for="linkedin">Linkedin</label>
-                              <input type="text" name="linkedin" id="linkedin" placeholder="Url para o Linkedin do Dev">
-                          </div>
-                      </div>
+                <div class="row">
 
-                      <div class="col_50">
-                          <div class="form_group">
-                              <label for="twitter">Twitter</label>
-                              <input type="text" name="twitter" id="twitter" placeholder="Url para o Twitter do Dev">
-                          </div>
-                      </div>
-
+                  <div class="col_50">
+                    <div class="form_group">
+                      <label for="github">Github</label>
+                      <input type="text" name="github" id="name" placeholder="Url para o Github do Dev" value="{{ old('github') }}">
+                    </div>
                   </div>
 
-                  <div class="row">
-
-                      <div class="col_50">
-                          <div class="form_group">
-                              <label for="instagram">Instagram</label>
-                              <input type="text" name="instagram" id="instagram" placeholder="Url para o Instagram do Dev">
-                          </div>
-                      </div>
-
-                      <div class="col_50">
-                          <div class="form_group">
-                              <label for="site">Site / Blog</label>
-                              <input type="text" name="site" id="site" placeholder="Url para o Site ou Blog do Dev">
-                          </div>
-                      </div>
-
+                  <div class="col_50">
+                    <div class="form_group">
+                      <label for="youtube">Youtube</label>
+                      <input type="text" name="youtube" id="youtube" placeholder="Url para o Youtube do Dev" value="{{ old('youtube') }}">
+                    </div>
                   </div>
 
-                  <div class="row">
-                      <div class="col_100">
-                          <hr class="separator">
-                      </div>
+                </div>
+
+                <div class="row">
+
+                  <div class="col_50">
+                    <div class="form_group">
+                      <label for="linkedin">Linkedin</label>
+                      <input type="text" name="linkedin" id="linkedin" placeholder="Url para o Linkedin do Dev" value="{{ old('linkedin') }}">
+                    </div>
                   </div>
 
-                  <div class="row">
-
-                      <div class="col_50 no_margin_footer">
-                          <button type="submit" class="btn btn_green btn_save">
-                              Cadastrar novo Dev
-                          </button>
-                      </div>
-
+                  <div class="col_50">
+                    <div class="form_group">
+                      <label for="twitter">Twitter</label>
+                      <input type="text" name="twitter" id="twitter" placeholder="Url para o Twitter do Dev" value="{{ old('twitter') }}">
+                    </div>
                   </div>
+
+                </div>
+
+                <div class="row">
+
+                  <div class="col_50">
+                    <div class="form_group">
+                      <label for="instagram">Instagram</label>
+                      <input type="text" name="instagram" id="instagram" placeholder="Url para o Instagram do Dev" value="{{ old('instagram') }}">
+                    </div>
+                  </div>
+
+                  <div class="col_50">
+                    <div class="form_group">
+                      <label for="site_blog">Site / Blog</label>
+                      <input type="text" name="site_blog" id="site_blog" placeholder="Url para o Site ou Blog do Dev" value="{{ old('site') }}">
+                    </div>
+                  </div>
+
+                </div>
+
+                <div class="row">
+                  <div class="col_100">
+                    <hr class="separator">
+                  </div>
+                </div>
+
+                <div class="row">
+
+                  <div class="col_50 no_margin_footer">
+                    <button type="submit" class="btn btn_green btn_save">
+                      Cadastrar novo Dev
+                    </button>
+                  </div>
+
+                </div>
 
               </form>
 
