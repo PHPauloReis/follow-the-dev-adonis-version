@@ -10,13 +10,17 @@
 
   <main>
 
+    @include('layout.alerts')
+
     <section class="card_container">
 
       @each(dev in devs)
 
         <div class="card">
           <div class="avatar_container">
+            @if(dev.avatar)
             <img src="{{ dev.avatar }}" alt="{{ dev.name }}">
+            @endif
           </div>
           <div class="dev_description_container">
             <div class="name">{{  dev.name }}</div>
@@ -51,7 +55,7 @@
           </div>
           <div class="action_buttons_container">
             <a href="#" class="edit_button">Editar</a>
-            <a href="#" onclick="delete('{{ dev.id }}')" class="delete_button">Excluir</a>
+            <a href="#" onclick="deleteDev('{{ route('dev.delete', { id: dev.id }) }}', event)" class="delete_button">Excluir</a>
           </div>
         </div>
       @endeach

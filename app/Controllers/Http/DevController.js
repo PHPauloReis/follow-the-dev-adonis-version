@@ -31,6 +31,18 @@ class DevController {
 
   }
 
+  async delete({ request, response, session }) {
+    const dev = await Dev.find(request.params.id)
+
+    await dev.delete()
+
+    session.flash({
+      success: 'Registro removido com sucesso!'
+    })
+
+    response.redirect('back')
+  }
+
 }
 
 module.exports = DevController

@@ -22,5 +22,24 @@
     </div>
   </section>
 
+  <form id="deleteDevForm" action="" method="POST">
+    {{ csrfField() }}
+  </form>
+
+  <script>
+
+    function deleteDev(route, event) {
+      event.preventDefault();
+
+      const deleteDevForm = document.querySelector('#deleteDevForm')
+
+      if(confirm("Você tem certeza que deseja remover este registro?")) {
+        deleteDevForm.setAttribute('action', route + "?_method=delete")
+        deleteDevForm.submit()
+      }
+    }
+
+  </script>
+
 </body>
 </html>
