@@ -54,7 +54,7 @@
             </div>
           </div>
           <div class="action_buttons_container">
-            <a href="#" class="edit_button">Editar</a>
+            <a href="{{ route('dev.edit', { id: dev.id }) }}" class="edit_button">Editar</a>
             <a href="#" onclick="deleteDev('{{ route('dev.delete', { id: dev.id }) }}', event)" class="delete_button">Excluir</a>
           </div>
         </div>

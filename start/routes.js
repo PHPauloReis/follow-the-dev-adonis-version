@@ -19,6 +19,8 @@ const Route = use('Route')
 Route.get('/', 'DevController.index').as('dev.index')
 Route.get('/create', 'DevController.create').as('dev.create')
 Route.post('/store', 'DevController.store').as('dev.store').validator('StoreDev')
+Route.get('/edit/:id', 'DevController.edit').as('dev.edit')
+Route.put('/update/:id', 'DevController.update').as('dev.update').validator('StoreDev')
 Route.delete('/delete/:id', 'DevController.delete').as('dev.delete')
 
 Route.get('/about', ({ view }) => {

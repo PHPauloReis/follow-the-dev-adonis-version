@@ -4,7 +4,7 @@ const Dev = use("App/Models/Dev")
 
 class DevController {
 
-  async index({ view, session }) {
+  async index({ view }) {
 
     const devs = await Dev.all()
 
@@ -13,7 +13,7 @@ class DevController {
     })
   }
 
-  create({ view, session }) {
+  create({ view }) {
     return view.render('dev.create')
   }
 
@@ -25,6 +25,32 @@ class DevController {
 
     session.flash({
       success: 'Registro gravado com sucesso!'
+    })
+
+    response.redirect('back')
+
+  }
+
+  async edit({ request, view }) {
+    const dev = await Dev.find(request.params.id)
+
+    return view.render('dev.edit', { dev })
+  }
+
+  async update({ request, response, session }) {
+
+    const dev = await Dev.find(request.params.id)
+
+    dev.merge(request.only([
+      'name', 'subject', 'avatar', 'github', 'youtube', 'linkedin', 'twitter', 'instagram', 'site_blog'
+    ]))
+
+    console.log(dev)
+
+    await dev.save()
+
+    session.flash({
+      success: 'Registro atualizado com sucesso!'
     })
 
     response.redirect('back')
