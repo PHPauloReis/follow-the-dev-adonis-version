@@ -1,0 +1,63 @@
+@layout('layout.template')
+@section('main')
+
+  <header>
+    <div class="brand">Follow<span>The</span>Dev</div>
+    <a href="{{ route('dev.create') }}" class="btn btn_yellow btn_create">
+      Cadastrar novo Dev
+    </a>
+  </header>
+
+  <main>
+
+    <section class="card_container">
+
+      @each(dev in devs)
+
+        <div class="card">
+          <div class="avatar_container">
+            <img src="{{ dev.avatar }}" alt="{{ dev.name }}">
+          </div>
+          <div class="dev_description_container">
+            <div class="name">{{  dev.name }}</div>
+            <div class="summary">{{ dev.subject }}</div>
+            <div class="pills_container">
+
+              @if(dev.youtube)
+              <a href="{{ dev.youtube }}" class="item pill red">Youtube</a>
+              @endif
+
+              @if(dev.github)
+              <a href="{{ dev.github }}" class="item pill black">Github</a>
+              @endif
+
+              @if(dev.linkedin)
+              <a href="{{ dev.linkedin }}" class="item pill dark_blue">Linkedin</a>
+              @endif
+
+              @if(dev.twitter)
+              <a href="{{ dev.twitter }}" class="item pill light_blue">Twitter</a>
+              @endif
+
+              @if(dev.instagram)
+              <a href="{{ dev.instagram }}" class="item pill red">Instagram</a>
+              @endif
+
+              @if(dev.site_blog)
+              <a href="{{ dev.site_blog }}" class="item pill black">Site / Blog</a>
+              @endif
+
+            </div>
+          </div>
+          <div class="action_buttons_container">
+            <a href="#" class="edit_button">Editar</a>
+            <a href="#" onclick="deleteDev(event)" class="delete_button">Excluir</a>
+          </div>
+        </div>
+      @endeach
+
+    </section>
+
+  </main>
+
+@endsection

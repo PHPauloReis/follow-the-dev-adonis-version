@@ -1,0 +1,125 @@
+@layout('layout.template')
+@section('main')
+
+<div class="wrapper">
+
+  <header>
+      <div class="brand">Follow<span>The</span>Dev</div>
+      <a href="index.html" class="btn btn_red btn_back">
+          Listagem de Devs
+      </a>
+  </header>
+
+  <main>
+
+      <section class="card_container">
+
+          <div class="page form">
+
+              <h1>Cadastrar novo Dev</h1>
+
+              <form action="">
+
+                  <div class="row">
+
+                      <div class="col_100">
+                          <div class="form_group">
+                              <label for="name">Nome do Dev</label>
+                              <input type="text" name="name" id="name" placeholder="Ex.: Acampamento Dev">
+                          </div>
+                      </div>
+
+                  </div>
+
+                  <div class="row">
+
+                      <div class="col_100">
+                          <div class="form_group">
+                              <label for="name">Assuntos abordados pelo Dev</label>
+                              <input type="text" name="name" id="name" placeholder="Ex.: PHP, Javascript, Java, Design Patterns, Clean Code, etc...">
+                          </div>
+                      </div>
+
+                  </div>
+
+                  <div class="row">
+
+                      <div class="col_50">
+                          <div class="form_group">
+                              <label for="github">Github</label>
+                              <input type="text" name="github" id="name" placeholder="Url para o Github do Dev">
+                          </div>
+                      </div>
+
+                      <div class="col_50">
+                          <div class="form_group">
+                              <label for="youtube">Youtube</label>
+                              <input type="text" name="youtube" id="youtube" placeholder="Url para o Youtube do Dev">
+                          </div>
+                      </div>
+
+                  </div>
+
+                  <div class="row">
+
+                      <div class="col_50">
+                          <div class="form_group">
+                              <label for="linkedin">Linkedin</label>
+                              <input type="text" name="linkedin" id="linkedin" placeholder="Url para o Linkedin do Dev">
+                          </div>
+                      </div>
+
+                      <div class="col_50">
+                          <div class="form_group">
+                              <label for="twitter">Twitter</label>
+                              <input type="text" name="twitter" id="twitter" placeholder="Url para o Twitter do Dev">
+                          </div>
+                      </div>
+
+                  </div>
+
+                  <div class="row">
+
+                      <div class="col_50">
+                          <div class="form_group">
+                              <label for="instagram">Instagram</label>
+                              <input type="text" name="instagram" id="instagram" placeholder="Url para o Instagram do Dev">
+                          </div>
+                      </div>
+
+                      <div class="col_50">
+                          <div class="form_group">
+                              <label for="site">Site / Blog</label>
+                              <input type="text" name="site" id="site" placeholder="Url para o Site ou Blog do Dev">
+                          </div>
+                      </div>
+
+                  </div>
+
+                  <div class="row">
+                      <div class="col_100">
+                          <hr class="separator">
+                      </div>
+                  </div>
+
+                  <div class="row">
+
+                      <div class="col_50 no_margin_footer">
+                          <button type="submit" class="btn btn_green btn_save">
+                              Cadastrar novo Dev
+                          </button>
+                      </div>
+
+                  </div>
+
+              </form>
+
+          </div>
+
+      </section>
+
+  </main>
+
+</div>
+
+@endsection
